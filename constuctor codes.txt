@@ -1,0 +1,64 @@
+package demo;
+
+public class Method {
+	
+	String color;   //by using reference variable
+	int age;        //these are instance variable
+
+	
+	
+	public Method() {                       //constructor name always be same as Class name ,Isme koi return type nhi likhte 
+		System.out.println("hp");            //Constructor ko bina call kiye main method me call ho jata hai
+	}
+	
+	public Method(int a) {                                //4 modifier me use hota hai cnstructr [pubic/protected/default/private]
+     System.out.println("Parameterized constructor");
+	}
+	
+	
+	
+	
+	void methodName(String c, int a) {             //method 1 object k thru call hoga main method me
+		color=c;
+		age=a;
+	}
+
+	void methodName1() {                        //method 2 object k thru call hoga main method me
+		System.out.println(color + age);
+	}
+	
+	
+	public void eat() {                         //method 3 object k thru call hoga main method me
+		System.out.println("I am eating");
+	}
+	
+	public void run() {                            //method 4 object k thru call hoga main method me
+		System.out.println("I am running");
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) {          //Main method isme bahar k method aayenge object k thuru
+		
+             Method abc=new Method();  //object ko create kiye [classname objectname = new classname]
+             
+             Method abcd=new Method();  //isme object create hua ye object intialize karaye by refernce variable. 
+            
+             abcd.color="green";
+             abc.color="red";
+             abc.age=12;
+             abc.eat();                      //objectname.methodname(); object k thru call karega is method ko
+		     abc.run();
+		     abc.methodName("black",12);        //method call karega is method me data jaega.
+		     abc.methodName1();                 //is method ko call karega jisme print hona hai data
+		     
+		     Method prmtr_constrct=new Method(11);  //parameterized constructor ko call karenge main method me
+		     System.out.println(abc.color +" "+ abc.age + " " +abcd.color);
+	
+		     
+	
+	}
+
+}
